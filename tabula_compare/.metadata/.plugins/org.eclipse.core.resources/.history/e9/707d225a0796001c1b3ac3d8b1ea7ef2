@@ -1,0 +1,37 @@
+package com.msb.pdf;
+
+import java.util.LinkedList;
+
+import com.graysonnorland.pdfmantis.exception.PdfMantisException;
+import com.msb.pdf.DiffTool.Diff;
+
+public class App {
+    public static void main( String[] args ) throws java.io.IOException{
+    	String oldFile = "C:/Users/ankush.gupta/Desktop/old.pdf";
+    	String newFile = "C:/Users/ankush.gupta/Desktop/new.pdf";
+
+    	String oldFileHighlighted =  "D:/pdfCompare/o2_mod.pdf";
+    	String newFileHighlighted = "D:/pdfCompare/m2_mod.pdf";
+    	
+    	LinkedList<Diff> diffs = PdfCompareText.compare(oldFile, newFile);
+//    	for(Diff adiff: diffs){
+//    		System.out.println(adiff.text);
+//    	}
+//    	
+    	
+    	
+//    	WritePdf.write(oldFileHighlighted, newFileHighlighted, diffs);
+    	
+    	//******************************************
+    	try {
+			TextCompare.highlight(oldFile, oldFileHighlighted, newFile, newFileHighlighted, diffs);
+		} catch (PdfMantisException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
+}

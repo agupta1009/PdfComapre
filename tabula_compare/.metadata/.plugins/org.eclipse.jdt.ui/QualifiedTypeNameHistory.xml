@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.itextpdf.awt.geom.Point2D"/>
+    <fullyQualifiedTypeName name="java.awt.Canvas"/>
+    <fullyQualifiedTypeName name="com.itextpdf.kernel.pdf.PdfWriter"/>
+    <fullyQualifiedTypeName name="com.itextpdf.kernel.pdf.PdfReader"/>
+    <fullyQualifiedTypeName name="com.itextpdf.text.pdf.PdfContentByte"/>
+    <fullyQualifiedTypeName name="java.awt.Color"/>
+    <fullyQualifiedTypeName name="com.itextpdf.kernel.colors.DeviceCmyk"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.PDDocument"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.PDPage"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.PDPageContentStream"/>
+    <fullyQualifiedTypeName name="java.awt.geom.Point2D"/>
+    <fullyQualifiedTypeName name="technology.tabula.RectangularTextContainer"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceCharacteristicsDictionary"/>
+    <fullyQualifiedTypeName name="com.itextpdf.kernel.colors.ColorConstants"/>
+    <fullyQualifiedTypeName name="com.itextpdf.kernel.pdf.PdfPage"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.pdfwriter.ContentStreamWriter"/>
+    <fullyQualifiedTypeName name="org.apache.pdfbox.pdmodel.graphics.color.PDColor"/>
+    <fullyQualifiedTypeName name="com.itextpdf.kernel.pdf.PdfDocument"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,84 @@
+package tabula;
+
+import java.awt.Color;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
+import org.apache.pdfbox.pdfwriter.ContentStreamWriter;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.pdmodel.PDPage;
+import org.apache.pdfbox.pdmodel.PDPageContentStream;
+import org.apache.pdfbox.pdmodel.PDPageContentStream.AppendMode;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceCharacteristicsDictionary;
+
+import com.itextpdf.kernel.colors.ColorConstants;
+import com.itextpdf.kernel.colors.DeviceCmyk;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfPage;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
+import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
+import com.itextpdf.kernel.pdf.extgstate.PdfExtGState;
+import com.itextpdf.kernel.pdf.layer.PdfLayer;
+
+public class color {
+
+	public static void run() throws IOException {
+		// TODO Auto-generated method stub
+		String filename="C:/Users/ankush.gupta/Desktop/cordinates.pdf";
+		Scanner sc=new Scanner(new File(filename));
+		while(sc.hasNextLine())
+		{
+			String s=sc.nextLine();
+			String arr[]=s.split(" ");
+			String filepath="";
+			String save="";
+			Color col;
+			com.itextpdf.kernel.colors.Color colour;
+			if(arr[1].equals("green")) {
+				filepath="C:/Users/ankush.gupta/Desktop/Modified.pdf";
+				save="C:/Users/ankush.gupta/Desktop/Modified.pdf";
+				col=Color.green;
+				colour=ColorConstants.GREEN;
+				}
+			else
+			{
+				filepath="C:/Users/ankush.gupta/Desktop/Original.pdf";
+				save="C:/Users/ankush.gupta/Desktop/Original.pdf";
+				col=Color.red;
+				colour = ColorConstants.RED;
+				}
+			PDDocument document = PDDocument.load(new File(filepath));
+			PDPage page = document.getPage((Integer.parseInt(arr[7]))-1);
+			PDPageContentStream contentStream = new PDPageContentStream(document, page,AppendMode.APPEND,false);
+			contentStream.setNonStrokingColor(col);		
+			
+			contentStream.addRect(Float.parseFloat(arr[2]), (page.getArtBox().getHeight()-Float.parseFloat(arr[3])),Float.parseFloat(arr[5]),Float.parseFloat(arr[4]));
+			contentStream.fill();
+			contentStream.close();
+			
+		    document.save(save);
+		    document.close();
+//		    PdfDocument pdfDoc = new PdfDocument(new PdfReader(new File(filepath)), new PdfWriter(new File(save)));
+//		    PdfLayer pdflayer = new PdfLayer("main layer", pdfDoc);
+//		    pdflayer.setOn(true);
+//		    PdfPage page=pdfDoc.getPage((Integer.parseInt(arr[7]))-1);
+//		    PdfCanvas canvas = new PdfCanvas(page);
+//		    
+//
+//		    canvas.beginLayer(pdflayer);
+//		    canvas.saveState()
+//		    .setFillColor(colour)
+//		    .setExtGState(new PdfExtGState().setFillOpacity(0.5f))
+//		    .rectangle(Float.parseFloat(arr[2]), (page.getArtBox().getHeight()-Float.parseFloat(arr[3])),Float.parseFloat(arr[5]),Float.parseFloat(arr[4]))
+//		    .fill()
+//		    .restoreState();
+//		    canvas.endLayer();
+//		    pdfDoc.close();
+		}
+		sc.close();
+	}
+}
+

@@ -1,0 +1,33 @@
+package tabula;
+
+import java.awt.*;
+import javax.swing.*;
+
+class test extends JFrame {
+
+	// constructor
+	test()
+	{
+		super("color");
+
+		// create a new Color
+		Color c = new Color(1.0f,0.0f,0.0f,0.2f);
+System.out.println(c.getTransparency());
+		// create a panel
+		JPanel p = new JPanel();
+
+		// set the background of the frame
+		// to the specified Color
+		p.setBackground(c);
+
+		setSize(200, 200);
+		add(p);
+		show();
+	}
+
+	// Main Method
+	public static void main(String args[])
+	{
+		test c = new test();
+	}
+}

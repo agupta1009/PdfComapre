@@ -1,0 +1,18 @@
+package tabula;
+import technology.tabula.ObjectExtractor;
+import technology.tabula.Page;
+import technology.tabula.RectangularTextContainer;
+import technology.tabula.Table;
+import technology.tabula.extractors.SpreadsheetExtractionAlgorithm;
+
+public class object {
+private Table table;
+private String filename;
+private Page page;
+public object(Table table, String filename, Page page) {
+	super();
+	this.table = table;
+	this.filename = filename;
+	this.page = page;
+}
+}
